@@ -91,7 +91,7 @@ def get_cookie(username, password):
         nex_url = re.findall(r"next\" value=\"(.*?) />", text)[0].replace("&amp;", "&").strip(" \"")[:-1]
         captcha_img_url = 'https://cas.bjtu.edu.cn/captcha/image/' + captcha_id
         captcha_img = session.get(captcha_img_url).content
-        captcha_result = base64_api(img=captcha_img, typeid=11)
+        captcha_result = base64_api(img=captcha_img, typeid=1005)
         if captcha_result['success']:
              captcha_result = captcha_result["data"]["result"]
         else:
